@@ -39,13 +39,121 @@ var fivePm;
 function displayTime() {
   var rightNow = moment().format('MMM DD, YYYY [at] hh:mm:ss a');
   timeDisplayEl.text(rightNow);
+
 }
 setInterval(displayTime, 1000);
+
+function highlightCurrentHour(){
+
+  var hour = moment().format('h A');
+  console.log(hour);
+
+
+  if(hour == "9 AM"){
+    document.getElementById("9amTxt").style.backgroundColor = "red";
+    document.getElementById("10amTxt").style.backgroundColor = "green";
+    document.getElementById("11amTxt").style.backgroundColor = "green";
+    document.getElementById("12pmTxt").style.backgroundColor = "green";
+    document.getElementById("1pmTxt").style.backgroundColor = "green";
+    document.getElementById("2pmTxt").style.backgroundColor = "green";
+    document.getElementById("3pmTxt").style.backgroundColor = "green";
+    document.getElementById("4pmTxt").style.backgroundColor = "green";
+    document.getElementById("5pmTxt").style.backgroundColor = "green";
+  } else if( hour == "10 AM"){
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "red";
+    document.getElementById("11amTxt").style.backgroundColor = "green";
+    document.getElementById("12pmTxt").style.backgroundColor = "green";
+    document.getElementById("1pmTxt").style.backgroundColor = "green";
+    document.getElementById("2pmTxt").style.backgroundColor = "green";
+    document.getElementById("3pmTxt").style.backgroundColor = "green";
+    document.getElementById("4pmTxt").style.backgroundColor = "green";
+    document.getElementById("5pmTxt").style.backgroundColor = "green";
+  } else if (hour == "11 AM"){
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "grey";
+    document.getElementById("11amTxt").style.backgroundColor = "red";
+    document.getElementById("12pmTxt").style.backgroundColor = "green";
+    document.getElementById("1pmTxt").style.backgroundColor = "green";
+    document.getElementById("2pmTxt").style.backgroundColor = "green";
+    document.getElementById("3pmTxt").style.backgroundColor = "green";
+    document.getElementById("4pmTxt").style.backgroundColor = "green";
+    document.getElementById("5pmTxt").style.backgroundColor = "green";
+  } else if (hour == "12 PM"){
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "grey";
+    document.getElementById("11amTxt").style.backgroundColor = "grey";
+    document.getElementById("12pmTxt").style.backgroundColor = "red";
+    document.getElementById("1pmTxt").style.backgroundColor = "green";
+    document.getElementById("2pmTxt").style.backgroundColor = "green";
+    document.getElementById("3pmTxt").style.backgroundColor = "green";
+    document.getElementById("4pmTxt").style.backgroundColor = "green";
+    document.getElementById("5pmTxt").style.backgroundColor = "green";
+  } else if (hour == "1 PM"){
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "grey";
+    document.getElementById("11amTxt").style.backgroundColor = "grey";
+    document.getElementById("12pmTxt").style.backgroundColor = "grey";
+    document.getElementById("1pmTxt").style.backgroundColor = "red";
+    document.getElementById("2pmTxt").style.backgroundColor = "green";
+    document.getElementById("3pmTxt").style.backgroundColor = "green";
+    document.getElementById("4pmTxt").style.backgroundColor = "green";
+    document.getElementById("5pmTxt").style.backgroundColor = "green";
+  } else if (hour == "2 PM"){
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "grey";
+    document.getElementById("11amTxt").style.backgroundColor = "grey";
+    document.getElementById("12pmTxt").style.backgroundColor = "grey";
+    document.getElementById("1pmTxt").style.backgroundColor = "grey";
+    document.getElementById("2pmTxt").style.backgroundColor = "red";
+    document.getElementById("3pmTxt").style.backgroundColor = "green";
+    document.getElementById("4pmTxt").style.backgroundColor = "green";
+    document.getElementById("5pmTxt").style.backgroundColor = "green";
+
+  }
+  
+  else if(hour == "3 PM"){
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "grey";
+    document.getElementById("11amTxt").style.backgroundColor = "grey";
+    document.getElementById("12pmTxt").style.backgroundColor = "grey";
+    document.getElementById("1pmTxt").style.backgroundColor = "grey";
+    document.getElementById("2pmTxt").style.backgroundColor = "grey";
+    document.getElementById("3pmTxt").style.backgroundColor = "red";
+    document.getElementById("4pmTxt").style.backgroundColor = "green";
+    document.getElementById("5pmTxt").style.backgroundColor = "green";
+  }
+  else if (hour == "4 PM"){
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "grey";
+    document.getElementById("11amTxt").style.backgroundColor = "grey";
+    document.getElementById("12pmTxt").style.backgroundColor = "grey";
+    document.getElementById("1pmTxt").style.backgroundColor = "grey";
+    document.getElementById("2pmTxt").style.backgroundColor = "grey";
+    document.getElementById("3pmTxt").style.backgroundColor = "grey";
+    document.getElementById("4pmTxt").style.backgroundColor = "red";
+    document.getElementById("5pmTxt").style.backgroundColor = "green";
+  } 
+  else if (hour == "5 PM"){
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "grey";
+    document.getElementById("11amTxt").style.backgroundColor = "grey";
+    document.getElementById("12pmTxt").style.backgroundColor = "grey";
+    document.getElementById("1pmTxt").style.backgroundColor = "grey";
+    document.getElementById("2pmTxt").style.backgroundColor = "grey";
+    document.getElementById("3pmTxt").style.backgroundColor = "grey";
+    document.getElementById("4pmTxt").style.backgroundColor = "grey";
+    document.getElementById("5pmTxt").style.backgroundColor = "red";
+  }
+
+
+}
+highlightCurrentHour();
 
 // We will piece each block into three parts and list them under each other, 1-save function, 2-render previous data function, click listen
 
 
-// 9am handle saving 
+//  handle saving 
  
   function save9amTxt(){
    nineAm = nineAmTxt.value; 
@@ -87,7 +195,7 @@ setInterval(displayTime, 1000);
 
 
 
-// The init() function fires when the page is loaded to render the previous data
+// The  function fires when the page is loaded to render the previous data
 
 function renderLastCalendar9am() {
   var renderLast9am = localStorage.getItem("nineAm");
@@ -201,7 +309,6 @@ save5pm.addEventListener("click", function(event){
   save5pmTxt();
   renderLastCalendar5pm();
 });
-
 
 
 
