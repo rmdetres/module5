@@ -144,6 +144,17 @@ function highlightCurrentHour(){
     document.getElementById("3pmTxt").style.backgroundColor = "grey";
     document.getElementById("4pmTxt").style.backgroundColor = "grey";
     document.getElementById("5pmTxt").style.backgroundColor = "red";
+  } else {
+    document.getElementById("9amTxt").style.backgroundColor = "grey";
+    document.getElementById("10amTxt").style.backgroundColor = "grey";
+    document.getElementById("11amTxt").style.backgroundColor = "grey";
+    document.getElementById("12pmTxt").style.backgroundColor = "grey";
+    document.getElementById("1pmTxt").style.backgroundColor = "grey";
+    document.getElementById("2pmTxt").style.backgroundColor = "grey";
+    document.getElementById("3pmTxt").style.backgroundColor = "grey";
+    document.getElementById("4pmTxt").style.backgroundColor = "grey";
+    document.getElementById("5pmTxt").style.backgroundColor = "grey";
+
   }
 
 
